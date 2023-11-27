@@ -38,18 +38,17 @@ class Email{
             
             $phpmailer->isHTML(TRUE);
             $phpmailer->CharSet = 'UTF-8';
-    
-            $contenido = "<html>";
-            $contenido .= "<p>Hola <strong>".$this->nombre."</strong></p>";
+
+            $contenido = "<p>Hola <strong>". $this->nombre . "</strong></p>";
             $contenido .= "<p>Has creado tu cuenta en UpTask, solo hace falta confirmarla en el siguiente enlace:</p>";
             $contenido .= "<p><a href='". $_ENV['APP_URL'] . "/confirmar?token=" . $this->token . "'>Confirmar cuenta</a></p>";
             $contenido .= "<p>Si no puedes acceder con el boton, copia y pega la siguiente url:</p>";
             $contenido .= $_ENV['APP_URL'] . "/confirmar?token=" . $this->token. "<br>";
             $contenido .= "<p>Si tu no creaste esta cuenta, puedes ignorar este mensaje.</p>";
-            $contenido .= "</html>";
+
     
+            // debuguear($contenido);
             $phpmailer->Body = $contenido;
-            // debuguear('contenido');
             $phpmailer->send();
         }
 
@@ -61,16 +60,14 @@ class Email{
             
             $phpmailer->isHTML(TRUE);
             $phpmailer->CharSet = 'UTF-8';
-    
-            $contenido = "<html>";
+
             $contenido .= "<p>Hola <strong>".$this->nombre."</strong></p>";
             $contenido .= "<p>Para cambiar tu password haz clic en el siguiente enlace:</p>";
             $contenido .= "<p><a href='" . $_ENV['APP_URL'] . "/reset?token=" . $this->token . "'>Recuperar password.</a></p>";
             $contenido .= "<p>Si tu no solicitaste cambiar tu password, puedes ignorar este mensaje.</p>";
-            $contenido .= "</html>";
     
             $phpmailer->Body = $contenido;
-            // debuguear('contenido');
+            // debuguear(contenido);
             $phpmailer->send();
         }
     }
