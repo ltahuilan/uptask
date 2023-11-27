@@ -1,0 +1,36 @@
+@use 'base/mixins' as mix;
+@use 'base/variables' as var;
+
+.no-proyectos {
+    a {
+        color: var.$indigo;
+    }
+}
+
+.lista-proyectos {
+    list-style: none;
+    line-height: 1.5;
+    padding: 0;
+    
+    @include mix.grid(1, 2rem);
+
+    @include mix.tablet{
+        @include mix.grid(2, 2rem);
+    }
+
+    @include mix.desktop{
+        @include mix.grid(3, 2rem);
+    }
+
+    .proyecto {
+        background-color: lighten(var.$indigo, 5%);
+        min-height: 10rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .7rem;
+        color: var.$blanco;
+        
+    }
+}

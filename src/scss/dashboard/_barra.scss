@@ -1,0 +1,72 @@
+@use 'base/mixins' as mix;
+@use 'base/variables' as var;
+
+
+.barra-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var.$indigo;
+    padding: 2rem 4rem;
+
+    @include mix.tablet {
+        display: none;
+    }
+
+    h2 {
+        color: var.$blanco;
+        margin: 0;
+    }
+    
+    .menu {
+        img {
+            width: 3rem;
+            height: 3rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.barra {
+    display: none;
+
+    @include mix.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        background-color: var.$blanco;
+        box-shadow: 1px 12px 12px -12px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 1px 12px 12px -12px rgba(0,0,0,0.5);
+    }
+
+    p {
+        font-size: 1.6rem;
+        font-weight: bold;
+        span {
+            color: var.$indigo;
+        }
+    }
+    
+    .controles {
+        display: flex;
+        gap: 2rem;
+        
+    }
+
+    .color-schema {
+        padding: .1rem;
+    }
+
+
+    .cerrar-sesion {
+        @include mix.boton(var.$indigo, var.$blanco);
+        margin: 0;
+        padding: 1rem;
+        border-radius: .7rem;
+        font-size: 1.2rem;
+    }
+
+}

@@ -1,0 +1,25 @@
+@use 'base/mixins' as mix;
+@use 'base/variables' as var;
+
+.alerta {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    padding: .5rem 2rem;
+    max-width: 90%;
+
+    &.error {
+        // background-color: lighten(var.$rojo, 35%);
+        background-color: lighten(crimson, 40%);
+        // color: var.$rojo;
+        color: crimson;
+        // border-left: .3rem solid var.$rojo;
+        border-left: .3rem solid crimson;
+    }
+
+    &.exito {
+        background-color: lighten(var.$verde, 55%);
+        color: var.$verde;
+        border-left: .3rem solid var.$verde;
+    }
+}

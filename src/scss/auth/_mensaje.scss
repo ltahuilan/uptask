@@ -1,0 +1,9 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix; 
+
+.mensaje {
+
+    .uptask {
+        @include mix.uptask(var.$naranja);
+    }
+}

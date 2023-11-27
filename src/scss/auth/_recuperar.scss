@@ -1,0 +1,21 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix; 
+
+.recuperar {
+
+    .uptask {
+
+        @include mix.uptask(var.$rosa);
+    }
+
+    input[type="submit"] {
+
+        @include mix.boton(var.$rosa, var.$blanco);
+    }
+
+    .acciones {
+        a {
+            color: var.$rosa;            
+        }
+    }
+}

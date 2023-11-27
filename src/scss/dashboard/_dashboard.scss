@@ -1,0 +1,54 @@
+@use 'base/mixins' as mix;
+@use 'base/variables' as var;
+
+.dashboard {
+    background-color: var.$grisClaro;
+    
+    @include mix.tablet {
+        display: flex;
+        height: 100vh;
+    }
+    
+    .principal {
+        flex: 1;
+        @include mix.tablet {
+            overflow: scroll;
+        }
+    }
+    
+    .contenido {
+        padding: 2rem;
+
+        @include mix.tablet {
+            padding: 5rem;
+        }
+        
+        .nombre-pagina {
+            font-size: 2.8rem;
+            text-align: center;
+        }
+    }
+
+    .formulario {
+
+        input:not([type="submit"]) {
+            background-color: var.$blanco;
+        }
+
+        input[type="submit"] {
+            @include mix.boton(var.$indigo, var.$blanco);
+            padding: 1rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+    }
+
+    .enlace {
+        color: var.$indigo;
+
+        &:hover {
+            color: darken(var.$indigo, 20%);
+            font-weight: 700;
+        }
+    }
+}

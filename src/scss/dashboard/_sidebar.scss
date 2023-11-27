@@ -1,0 +1,94 @@
+@use 'base/mixins' as mix;
+@use 'base/variables' as var;
+
+.sidebar {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: 250ms; 
+
+    &.show {
+        opacity: 1;
+        height: 100%;
+        padding: 2rem 4rem;
+        background-color: var.$indigo;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &.hide {
+        opacity: 0;
+    }
+
+    @include mix.tablet {
+        opacity: 1;
+        height: 100%;
+        background-color: var.$indigo;
+        padding: 1rem;
+    }
+
+    .sidebar-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 2rem;
+            @include mix.tablet{
+                display: none;
+            }
+        }
+        h2 {
+            color: var.$blanco;
+            margin-bottom: 0;
+        }
+
+    }
+
+
+    .sidebar-nav {
+        margin-top: 5rem;
+
+        a {
+            color: var.$blanco;
+            display: block;
+            margin-bottom: 3rem;
+            padding: .7rem;
+            transition-property: background-color;
+            transition-duration: 300ms;
+            font-size: 2.6rem;
+            text-align: center;
+            font-weight: bold;
+    
+            &:hover,
+            &.activo {
+                border-radius: .7rem;
+                background-color: darken(var.$indigo, 10%);
+            }
+
+            @include mix.tablet {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .cerrar-sesion {
+        margin-top: 10rem;
+        a {
+            @include mix.boton(var.$cyan, var.$blanco);
+            padding: 2rem;
+        }
+
+        @include mix.tablet {
+            display: none;
+        }
+    }
+
+}

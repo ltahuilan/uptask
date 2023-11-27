@@ -1,0 +1,39 @@
+@use 'base/mixins' as mix;
+@use 'base/variables' as var;
+
+.formulario {
+
+    padding: 2rem;
+
+    .campo {        
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center;
+        
+        @include mix.tablet {
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 2rem;
+
+            @include mix.tablet {
+                flex: 0 0 12rem;
+                display: inline-block;
+                margin-bottom: 0;
+            }
+        }
+
+        input {
+            flex: 1;
+            border: none;
+            background-color: lighten(var.$gris, 40%);
+            padding: 1rem;
+        }
+
+    }
+    
+}

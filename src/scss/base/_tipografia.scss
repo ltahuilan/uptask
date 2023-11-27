@@ -1,0 +1,40 @@
+@use 'variables' as var;
+
+h1, h2, h3 {
+    font-family: var.$fuente_headings;
+    margin: 0 0 calc(var.$separacion / 2) 0 ;
+    font-weight: 900;
+}
+h1 {
+    font-size: 6rem;
+}
+h2 {
+    font-size: 5rem;
+}
+h3 {
+    font-size: 4rem;
+}
+p {
+    font-size: 2rem;
+    color: var.$gris;
+    line-height: 1.8;
+}
+
+.descripcion-pagina {
+    text-align: center;
+    margin: 0;
+}
+
+.tagline {
+    text-align: center;
+    font-weight: 900;
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: lighten(var.$negro, 15%);
+    // color: var.$negro;
+    font-family: var.$fuente_headings;
+}
+
+.contenido-pagina {
+    text-align: center;
+}

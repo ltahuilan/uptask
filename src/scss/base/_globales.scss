@@ -1,0 +1,34 @@
+@use 'variables' as var;
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+body {
+    font-family: var.$fuente_textos;
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contenedor-sm {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 1rem;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}

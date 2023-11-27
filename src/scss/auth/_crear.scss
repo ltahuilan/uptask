@@ -1,0 +1,21 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix; 
+
+.crear {
+
+    .uptask {
+
+        @include mix.uptask(var.$morado);
+    }
+
+    input[type="submit"] {
+        @include mix.boton(var.$morado, var.$blanco);
+    }
+
+    .acciones {
+        a {
+            color: var.$morado;
+        }
+    }
+}
+

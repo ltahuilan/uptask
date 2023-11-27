@@ -1,0 +1,17 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix; 
+
+.confirmar {
+
+    .uptask {
+
+        @include mix.uptask(var.$indigo);
+    }
+
+    .acciones {
+        justify-content: center;
+        a {
+            color: var.$indigo;
+        }
+    }
+}
